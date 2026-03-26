@@ -33,34 +33,56 @@ Convert any YouTube video into a **professional article + complete website (HTML
 ---
 
 How It Works
-🔹 1. Transcript Extraction
+
+ 1. Transcript Extraction
+
 Uses YouTube transcript loader
+
 Supports:
+
 Hindi (hi)
+
 English (en) fallback
-🔹 2. Smart Summarization
-✅ Short Videos
+
+ 2. Smart Summarization
+
+ Short Videos
+
 Direct summarization using LLM
-✅ Long Videos
+
+ Long Videos
+
 Splits transcript into chunks
+
 Uses recursive summarization
+
 Maintains running summary
-🔹 3. Article Generation
+
+ 3. Article Generation
+
 Removes:
+
 Ads
+
 Promotions
+
 Intro noise
+
 Converts into:
+
 Clean blog-style article
+
 Structured content
-🔹 4. Website Generation
+
+4. Website Generation
 
 AI generates structured output in this format:
 
 --html--
 --css--
 --js--
-🔹 5. File Creation
+
+ 5. File Creation
 
 Automatically creates:
 
@@ -71,25 +93,18 @@ script.js
 And packages them into:
 
 website.zip
+
 💻 UI (Streamlit)
+
 Input: YouTube URL
+
 Output:
+
 HTML tab
 CSS tab
 JS tab
+
 Download full website
-❗ Common Issues
-🔴 Streamlit Error
-
-Error:
-Streamlit requires raw Python (.py) files
-
-Fix:
-Make sure your file has .py extension:
-
-streamlit run app.py
-
-.
 
 🙌 Author
 
