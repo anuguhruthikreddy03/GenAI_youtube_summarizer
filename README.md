@@ -1,111 +1,118 @@
 # 📺 YouTube → Article → Website Generator
-
-Convert any YouTube video into a **professional article + complete website (HTML, CSS, JS)** using AI.
-
 ---
 
 ## 🚀 Features
 
-- 🔗 Input YouTube URL  
-- 🧠 Extracts transcript (Hindi + English fallback)  
-- ✍️ Generates **professional blog-style article**  
-- 🌐 Converts article into:
-  - HTML  
-  - CSS  
-  - JavaScript  
-- 📦 Download ready-to-use **website ZIP**  
-- ⚡ Handles **long videos using recursive summarization**
+* 🔗 Input YouTube URL
+* 🧠 Extracts transcript (Hindi + English fallback)
+* ✍️ Generates **professional blog-style article**
+* 🌐 Converts article into:
+
+  * HTML
+  * CSS
+  * JavaScript
+* 📦 Download ready-to-use **website ZIP**
+* ⚡ Handles **long videos using recursive summarization**
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python  
-- Streamlit  
-- LangChain  
-- Google Gemini (`langchain_google_genai`)  
-- YouTube Transcript API  
-- dotenv  
+* 🐍 Python
+* ⚡ Streamlit
+* 🔗 LangChain
+* 🤖 Google Gemini (`langchain_google_genai`)
+* 📺 YouTube Transcript API
+* 🔐 dotenv
 
 ---
 
+## ⚙️ How It Works
+
+* 📥 Extracts transcript using YouTube Transcript API
+* 🌐 Supports Hindi (`hi`) and English (`en`) fallback
+* ✂️ Splits long transcripts into smaller chunks
+* 🔁 Applies recursive summarization for long videos
+* 🧠 Maintains context-aware summaries
+* 🧹 Removes ads, promotions, and intro noise
+* ✍️ Converts content into structured blog-style article
+* 🌐 Generates website code in:
+
+  * HTML
+  * CSS
+  * JavaScript
 
 ---
 
-How It Works
+## 📦 Output Format
 
- 1. Transcript Extraction
+* 🤖 AI generates structured response:
 
-Uses YouTube transcript loader
+  * `--html--`
+  * `--css--`
+  * `--js--`
 
-Supports:
+---
 
-Hindi (hi)
+## 📁 File Generation
 
-English (en) fallback
+* 📄 Creates:
 
- 2. Smart Summarization
+  * `index.html`
+  * `style.css`
+  * `script.js`
+* 📦 Packages all files into:
 
- Short Videos
+  * `website.zip`
 
-Direct summarization using LLM
+---
 
- Long Videos
+## 💻 UI (Streamlit)
 
-Splits transcript into chunks
+* 🔗 Input:
 
-Uses recursive summarization
+  * YouTube URL
+* 📤 Output:
 
-Maintains running summary
+  * HTML tab
+  * CSS tab
+  * JavaScript tab
+  * Download full website ZIP
 
- 3. Article Generation
+---
 
-Removes:
+## ▶️ How to Run
 
-Ads
+* 📥 Clone the repository
+* 📂 Navigate to project folder
+* 📦 Install dependencies
+* ▶️ Run Streamlit app
 
-Promotions
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-Intro noise
+---
 
-Converts into:
+## 📌 Environment Variables
 
-Clean blog-style article
+* 📄 Create `.env` file
+* 🔑 Add your API key
 
-Structured content
+```env
+GOOGLE_API_KEY=your_api_key_here
+```
 
-4. Website Generation
 
-AI generates structured output in this format:
+## 🙌 Author
 
---html--
---css--
---js--
+* 👨‍💻 Hruthik
 
- 5. File Creation
+---
 
-Automatically creates:
+## ⭐ Support
 
-index.html
-style.css
-script.js
-
-And packages them into:
-
-website.zip
-
-💻 UI (Streamlit)
-
-Input: YouTube URL
-
-Output:
-
-HTML tab
-CSS tab
-JS tab
-
-Download full website
-
-🙌 Author
-
-Hruthik
+* ⭐ Give this project a star if you like it
