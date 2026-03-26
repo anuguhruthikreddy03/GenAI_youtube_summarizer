@@ -15,10 +15,9 @@ import zipfile
 
 load_dotenv()
 
-# ✅ API KEY
 os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 
-# ✅ MODEL
+
 llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash')
 
 # ------------------- ARTICLE GENERATION -------------------
@@ -43,7 +42,7 @@ summarizer_prompt = ChatPromptTemplate.from_messages([
 # ------------------- TRANSCRIPT FUNCTION -------------------
 
 def extract_transcript(link: str) -> str:
-    print("📥 Fetching transcript...")
+    print("Fetching transcript...")
 
     try:
         # Try Hindi first
@@ -55,7 +54,7 @@ def extract_transcript(link: str) -> str:
         docs = loader.load()
 
     except Exception:
-        print("⚠️ Hindi transcript failed, trying English...")
+        print(" Hindi transcript failed, trying English...")
 
         try:
             loader = YoutubeLoader.from_youtube_url(
@@ -65,13 +64,13 @@ def extract_transcript(link: str) -> str:
             )
             docs = loader.load()
         except Exception as e:
-            print("❌ Transcript fetch failed:", e)
+            print(" Transcript fetch failed:", e)
             return ""
 
     if not docs:
         return ""
 
-    print("✅ Transcript fetched")
+    print("Transcript fetched")
     return docs[0].page_content
 
 
@@ -146,7 +145,7 @@ long_summarizer = (
 # ------------------- LENGTH CHECK -------------------
 
 def estimate_transcript_length(link: str) -> bool:
-    print("📏 Checking transcript length...")
+    print("Checking transcript length...")
 
     try:
         loader = YoutubeLoader.from_youtube_url(
@@ -157,7 +156,7 @@ def estimate_transcript_length(link: str) -> bool:
         docs = loader.load()
 
     except Exception:
-        print("⚠️ Hindi failed, trying English...")
+        print("Hindi failed, trying English...")
 
         try:
             loader = YoutubeLoader.from_youtube_url(
@@ -167,7 +166,7 @@ def estimate_transcript_length(link: str) -> bool:
             )
             docs = loader.load()
         except Exception as e:
-            print("❌ Transcript length check failed:", e)
+            print("Transcript length check failed:", e)
             return False
 
     if not docs:
@@ -225,10 +224,10 @@ try:
     if not article:
         raise ValueError("No article generated")
 
-    print("✅ Generation done!")
+    print("Generation done!")
 
 except Exception as e:
-    print("❌ Error during processing:", e)
+    print("Error during processing:", e)
     exit()
 
 
@@ -253,7 +252,7 @@ try:
         zipf.write('style.css')
         zipf.write('script.js')
 
-    print("🎉 Files created successfully!")
+    print("Files created successfully!")
 
 except Exception as e:
-    print("❌ File writing error:", e)
+    print("File writing error:", e)
